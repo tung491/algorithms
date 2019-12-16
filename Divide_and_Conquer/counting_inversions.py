@@ -64,8 +64,9 @@ def merge_and_count_split_inv(a, c, d):
 
 
 def main():
-    a = [i for i in range(10000)]
-    random.shuffle(a)
+    with open('input_w2.txt') as f:
+        data = f.read()
+    a = [int(i) for i in data.splitlines()]
     # runtime of Brute Force search
     time_start_1 = time.time()
     inversion_n_1 = brute_force_search(a)
