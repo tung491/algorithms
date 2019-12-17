@@ -3,7 +3,7 @@ import numpy as np
 
 def strassen_mutiply(x, y):
     """
-    Muliply 2 matrices using strassen algorithm which base on Divide and Conquer Algorithm
+    Muliply 2 matrices using strassen algorithms which base on Divide and Conquer Algorithm
     :param x:
     :param y:
     :return: result
@@ -18,8 +18,8 @@ def strassen_mutiply(x, y):
         e, f = y[:split_n, :split_n], y[:split_n, split_n:]
         g, h = y[split_n:, :split_n], y[split_n:, split_n:]
         p1 = strassen_mutiply(a, f - h)
-        p2 = strassen_mutiply(h, a + b)
-        p3 = strassen_mutiply(e, c + d)
+        p2 = strassen_mutiply(a + b, h)
+        p3 = strassen_mutiply(c + d, e)
         p4 = strassen_mutiply(d, g - e)
         p5 = strassen_mutiply(a + d, e + h)
         p6 = strassen_mutiply(b - d, g + h)
@@ -41,11 +41,9 @@ def main():
         [5, 6],
         [7, 8]
     ])
-
-    expect = np.multiply(x, y)
+    expect = np.dot(x, y)
     result = strassen_mutiply(x, y)
-    print(f'Expect: {expect} \n',
-          f'Result: {result}')
+    print(f'Expect: {expect} \n Result: {result}')
 
 
 if __name__ == '__main__':
