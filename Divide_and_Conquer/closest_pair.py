@@ -1,9 +1,6 @@
 import math
 import random
-import sys
 import time
-
-sys.setrecursionlimit(5000)
 
 
 def distance(p1, p2):
@@ -44,7 +41,7 @@ def find_closest_pair(px, py):
     r1, r2 = find_closest_pair(right_px, right_py)
     pairs = [(l1, l2), (r1, r2)]
     best_pair, min_dist = min([(pair, distance(*pair)) for pair in pairs],
-                              key=lambda x:x[1])
+                              key=lambda x: x[1])
     s1, s2 = closest_split_pair(px, py, min_dist, best_pair)
     pairs.append((s1, s2))
     pairs = [(pair, distance(*pair)) for pair in pairs]
@@ -73,8 +70,8 @@ def closest_split_pair(px, py, delta, best_pair):
 
 
 def main():
-    x = [random.randint(1, 200) for _ in range(16)]
-    y = [random.randint(1, 200) for _ in range(16)]
+    x = [random.randint(1, 2 * 10 ** 6) for _ in range(2 ** 20)]
+    y = [random.randint(1, 2 * 10 ** 6) for _ in range(2 ** 20)]
     p = list(zip(x, y))
     px = sorted(p, key=lambda x: x[0])
     py = sorted(p, key=lambda x: x[1])
