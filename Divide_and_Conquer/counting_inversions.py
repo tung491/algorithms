@@ -33,17 +33,18 @@ def sort_and_count_inv(a):
         second_half_a = a[n//2:]
         c, left_inv = sort_and_count_inv(first_half_a)
         d, right_inv = sort_and_count_inv(second_half_a)
-        b, split_inv = merge_and_count_split_inv(a, c, d)
+        b, split_inv = merge_and_count_split_inv(c, d)
         inversion_n = left_inv + right_inv + split_inv
     return b, inversion_n
 
 
-def merge_and_count_split_inv(a, c, d):
+def merge_and_count_split_inv(c, d):
     """
     Merge and count the inversion number which is in both 2 halves
     :param c: input list (list)
-    :param: d: input list (list)
-    :return split_inv: the number of split inversions (int)
+    :param d: input list (list)
+    :return b: sorted list which merge from c and d (list)
+    :return split_inv: the number of split inversion (int)
     """
     n = len(c) + len(d)
     b = []
