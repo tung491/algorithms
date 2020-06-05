@@ -1,12 +1,12 @@
 from linked_list import Node
-
+from typing import Any
 
 class Stack:
     def __init__(self):
         self.length = 0
         self.head = None
 
-    def push(self, new_node: Node):
+    def push(self, new_node: Node) -> None:
         if self.head is None:
             self.head = new_node
         else:
@@ -14,7 +14,7 @@ class Stack:
             self.head = new_node
         self.length += 1
 
-    def pop(self):
+    def pop(self) -> Any:
         if self.is_empty:
             return None
         temp = self.head.value
@@ -22,7 +22,7 @@ class Stack:
         self.length -= 1
         return temp
 
-    def top(self):
+    def top(self) -> Any:
         if self.head is None:
             return None
         return self.head.value
