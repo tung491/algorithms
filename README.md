@@ -9,3 +9,5 @@
 * [Tree](https://github.com/tung491/algorithms/blob/master/data_structure/tree.py)
 * [Heap](https://github.com/tung491/algorithms/blob/master/data_structure/heap.py)
  
+## Algorithms
+* [A*(A star)](https://github.com/tung491/algorithms/tree/master/a_star)
