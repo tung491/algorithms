@@ -1,5 +1,7 @@
-from linked_list import Node
 from typing import Any
+
+from linked_list import Node
+
 
 class Stack:
     def __init__(self):

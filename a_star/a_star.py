@@ -54,12 +54,10 @@ def shortest_path(map_, start: int, goal: int) -> Union[list, None]:
                                                        get_intersect(node))
             if node not in score or updated_score < score[node]:
                 score[node] = updated_score
-                total_score = updated_score + calc_dist(get_intersect(node),
-                                                        get_intersect(goal))
+                total_score = updated_score + calc_dist(get_intersect(node), get_intersect(goal))
                 frontiers.insert((total_score, node))
                 previous_road[node] = current
     return None
-
 
 def main() -> None:
     map_40 = load_map('map-40.pickle')
