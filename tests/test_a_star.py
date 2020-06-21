@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from a_star import calc_dist, get_path, shortest_path
-from helper import load_map
+from a_star.helper import load_map
+from a_star.a_star import get_path, shortest_path
 
 
 class Test(TestCase):
@@ -18,4 +18,3 @@ class Test(TestCase):
         ]
         for test_case in test_cases:
             self.assertEqual(shortest_path(map_40, *test_case[:2]), test_case[-1])
-

@@ -2,6 +2,10 @@ from typing import Any
 
 
 class Node:
+    pass
+
+
+class SinglyNode(Node):
     def __init__(self, value: Any):
         self.value = value
         self.next = None
@@ -23,7 +27,7 @@ class LinkedList:
             print(current_node.value)
             current_node = current_node.next
 
-    def append(self, new_node: Node) -> None:
+    def append(self, new_node: SinglyNode) -> None:
         current_node = self.head
         while current_node:
             if current_node.next:
