@@ -1,17 +1,13 @@
 from typing import Any
 
 
-class Node:
-    pass
-
-
-class SinglyNode(Node):
+class SinglyNode:
     def __init__(self, value: Any):
         self.value = value
         self.next = None
 
 
-class DoublyNode(Node):
+class DoublyNode(SinglyNode):
     def __init__(self, value: Any):
         super().__init__(value)
         self.prev = None
@@ -41,7 +37,7 @@ class DoublyLinkedList(LinkedList):
     def __init__(self):
         super().__init__()
 
-    def append(self, new_node: DoublyNode) -> None:
+    def append(self, new_node: DoublyNode) -> None:  # type: ignore[override]
         current_node = self.head
 
         while current_node:
