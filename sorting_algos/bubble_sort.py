@@ -18,4 +18,3 @@ def bubble_sort(input_list: list) -> list:
 
 if __name__ == '__main__':
     print(bubble_sort([1, 3, 5, 8, 11, 2]))
-

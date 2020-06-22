@@ -1,8 +1,8 @@
 import math
-from typing import Union
 import sys
+from typing import Union
 
-from helper import load_map, Map
+from helper import load_map
 
 sys.path.insert(0, '..')
 from data_structure.heap import MinHeap
@@ -58,6 +58,7 @@ def shortest_path(map_, start: int, goal: int) -> Union[list, None]:
                 frontiers.insert((total_score, node))
                 previous_road[node] = current
     return None
+
 
 def main() -> None:
     map_40 = load_map('map-40.pickle')
