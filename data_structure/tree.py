@@ -12,16 +12,16 @@ class Node:
             return True
         return False
 
-    def set_left(self, node: Node) -> None:
+    def set_left(self, node) -> None:
         self.left = node
 
-    def set_right(self, node: Node) -> None:
+    def set_right(self, node) -> None:
         self.right = node
 
-    def get_left(self) -> Node:
+    def get_left(self) -> 'Node':
         return self.left
 
-    def get_right(self) -> Node:
+    def get_right(self) -> 'Node':
         return self.right
 
 
