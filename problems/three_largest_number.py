@@ -15,4 +15,4 @@ def find_three_largest_nums(input_list: List[int]) -> List[int]:
 
 
 if __name__ == '__main__':
-    print(find_three_largest_nums([141, 1, 16, 12, 14, 4, 5]))
+    print(find_three_largest_nums([141, 1, 16, 12, 14, 4, 5, 17]))
