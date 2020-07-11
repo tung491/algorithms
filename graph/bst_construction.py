@@ -69,4 +69,4 @@ class BinarySearchTree:
         curr_node = self
         while curr_node.left is not None:
             curr_node = curr_node.left
-        return curr_node.valu is not None
+        return curr_node.value
