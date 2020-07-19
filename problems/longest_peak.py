@@ -22,4 +22,4 @@ def longest_peak(arr):
 
 if __name__ == "__main__":
     print(longest_peak([1, 2, 3, 3, 4, 0, 10,
-    6, 5, -1, -3, 2, 3]))
+                        6, 5, -1, -3, 2, 3]))

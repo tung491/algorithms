@@ -1,12 +1,17 @@
-class BinarySearchTree:
-    def __init__(self, root_value):
-        self.value = root_value
+class Node:
+    def __init__(self, value):
+        self.value = value
         self.left = None
         self.right = None
         self.children = [self.left, self.right]
 
+
+class BinarySearchTree:
+    def __init__(self, root_value):
+        self.root = Node(root_value)
+
     def insert(self, value):
-        curr_node = self
+        curr_node = self.root
         while True:
             if value < curr_node.value:
                 if curr_node.left is not None:
@@ -20,10 +25,10 @@ class BinarySearchTree:
                     break
                 else:
                     curr_node = curr_node.right
-        return self
+        return self.root
 
     def contains(self, value):
-        curr_node = self
+        curr_node = self.root
         while curr_node is not None:
             if value < curr_node.value:
                 curr_node = curr_node.left
@@ -34,7 +39,7 @@ class BinarySearchTree:
         return False
 
     def remove(self, value, parent_node=None):
-        curr_node = self
+        curr_node = self.root
         while curr_node is not None:
             if value < curr_node.value:
                 parent_node = curr_node
@@ -43,7 +48,7 @@ class BinarySearchTree:
                 parent_node = curr_node
                 curr_node = curr_node.right
             else:
-                if all(child is not None for child in self.children):
+                if all(child is not None for child in curr_node.children):
                     min_right_value = curr_node.right.get_min_value()
                     curr_node.value = min_right_value
                     curr_node.right.remove(min_right_value, curr_node)
@@ -63,10 +68,10 @@ class BinarySearchTree:
                 elif parent_node.right == curr_node:
                     parent_node.right = curr_node.left if curr_node.left else curr_node.right
                 break
-        return self
+        return self.root
 
     def get_min_value(self):
-        curr_node = self
+        curr_node = self.root
         while curr_node.left is not None:
             curr_node = curr_node.left
         return curr_node.value
